@@ -69,7 +69,11 @@ export function Home() {
             token,
           })
 
-          setContacts(contacts.splice(index, 1))
+          if(contacts.length > 1) {
+            setContacts(contacts.splice(index, 1))
+          }else {
+            setContacts([])
+          }
 
           Swal.fire(
             'Deleted!',
