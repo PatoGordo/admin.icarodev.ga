@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Page404 } from './pages/404'
 import { Home } from './pages/home'
 import { Login } from './pages/login'
+import './global.scss'
 
 function App() {
   return (

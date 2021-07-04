@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { FormEvent, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import 'sweetalert2/src/sweetalert2.scss'
 import './login.scss'
 
 export function Login() {
@@ -26,20 +28,24 @@ export function Login() {
       localStorage.setItem('token', res.data.token._id)
       history.push('/')
     }catch(err) {
-      alert('this token does not exist')
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Maybe this token does not exist',
+      })
+      setInput('')
     }
   }
 
   return (
     <div id="login">
-      <h2>Login page</h2>
-      {input}
+      <h2>Token validation page</h2>
 
       <form onSubmit={validateToken}>
         <input type="text"
           placeholder="Your token"
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e) => setInput(e.target.value.trim())}
           required
         />
 
