@@ -30,7 +30,7 @@ export function Home() {
       try {
         console.log('running');
 
-        const res = await axios.post('https://my-contact-api.herokuapp.com/contact/validade-token', { token })
+        const res = await axios.post('https://my-contact-api.herokuapp.com/contact/validate-token', { token })
 
         localStorage.setItem('token', res.data.token._id)
         setToken(res.data.token._id)
