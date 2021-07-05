@@ -84,7 +84,7 @@ export function Home() {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Maybe you not have permission to delete it!',
+            text: err.message,
           })
         }
       } else if (result.dismiss === Swal.DismissReason.cancel) {
