@@ -21,7 +21,7 @@ export function Login() {
     e.preventDefault()
 
     try {
-      const res = await axios.post('https://my-contact-api.herokuapp.com/validate-token', {
+      const res = await axios.post('https://my-contact-api.herokuapp.com/contact/validate-token', {
         token: input
       })
       
