@@ -30,7 +30,7 @@ export function Home() {
       try {
         console.log('running');
 
-        const res = await axios.post('https://my-contact-api.herokuapp.com/validate-token', { token })
+        const res = await axios.post('https://my-contact-api.herokuapp.com/contact/validade-token', { token })
 
         localStorage.setItem('token', res.data.token._id)
         setToken(res.data.token._id)
@@ -42,7 +42,7 @@ export function Home() {
     }
     async function getContacts() {
       try {
-        const res = await axios.post('https://my-contact-api.herokuapp.com/get-contacts', { token })
+        const res = await axios.post('https://my-contact-api.herokuapp.com/contact/get', { token })
         setContacts(res.data)
       } catch (err) {
         alert(err.message)
@@ -64,7 +64,7 @@ export function Home() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.post('https://my-contact-api.herokuapp.com/delete-contact', {
+          await axios.post('https://my-contact-api.herokuapp.com/contact/delete', {
             id,
             token,
           })
