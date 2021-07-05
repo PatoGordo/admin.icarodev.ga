@@ -84,7 +84,7 @@ export function Home() {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: err.message,
+            text: 'Maybe this token not have permission to delete contacts.',
           })
         }
       } else if (result.dismiss === Swal.DismissReason.cancel) {

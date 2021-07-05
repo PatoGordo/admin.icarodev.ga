@@ -31,7 +31,7 @@ export function Login() {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Maybe this token does not exist',
+        text: 'This token does not exist',
       })
       setInput('')
     }
